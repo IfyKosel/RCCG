@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { Bell, ChevronDown, Search } from "lucide-react";
+import Image from "next/image";
 // import Search from "../Search/Search";
 // import Notification from "../Notification/Notification";
 // import Settings from "../Settings/Settings";
@@ -13,25 +15,56 @@ const Navbar = (props: Props) => {
   const pageName = pathName.replace("/", "");
 
   return (
-    <section className="bg-[#F8F9FA] h-18 sticky top-0 z-10 px-5 md:px-0">
-      <div className="flex-row-reverse md:flex-row flex md:justify-between items-center h-full gap-5 relative">
-        <div className="flex flex-col text-xs sm:text-sm md:text-base text-end md:text-start">
-          <p className="text-[#8A92A6]">
-            Pages <span className="text-black capitalize">/ {pageName}</span>
-          </p>
-          <h2 className="text-black font-bold capitalize">{pageName}</h2>
+    <header className="w-full border border-b-gray-200 bg-primary-50 top-0 left-0 z-10 sticky">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/public/globe.svg" // put logo in /public
+            alt="RCCG Logo"
+            width={40}
+            height={40}
+          />
+          <div className="leading-tight">
+            <p className="text-lg font-bold text-gray-800">
+              THE REDEEMED CHRISTIAN CHURCH OF GOD
+            </p>
+            <p className="text-gray-800 font-semibold">PROVINCE: LP69</p>
+          </div>
         </div>
 
-        <div className="flex gap-8 lg:gap-20">
-          {/* <Search /> */}
-          <div className="hidden md:flex items-center gap-3 md:mr-4">
-            {/* <Notification />
-            <Settings />
-            <SignOut /> */}
+        <div className="hidden md:flex w-1/3">
+          <div className="relative w-full">
+            <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-600" />
+            <input
+              type="text"
+              placeholder="Search something here"
+              className="w-full rounded-lg border border-gray-200 bg-gray-50 py-2 pl-10 pr-3 text-sm text-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+            />
+          </div>
+        </div>
+
+        <div className="flex items-center gap-6">
+          <div className="relative cursor-pointer border-r-gray-200">
+            <Bell className="size-6 text-primary-500" />
+            <span className="absolute -right-1 -top-1 size-4 rounded-full bg-red-500 text-[10px] font-semibold text-white flex items-center justify-center">
+              9
+            </span>
+          </div>
+
+          {/* User */}
+          <div className="flex items-center gap-2">
+            <div className="flex size-12 items-center justify-center rounded-full bg-primary-100 font-bold">
+              AI
+            </div>
+            <div className="hidden sm:block leading-tight">
+              <p className="text-sm font-medium text-gray-800">Ayoola Iyiola</p>
+              <p className="text-xs text-gray-800">Admin</p>
+            </div>
+            <ChevronDown className="h-4 w-4 text-gray-800" />
           </div>
         </div>
       </div>
-    </section>
+    </header>
   );
 };
 

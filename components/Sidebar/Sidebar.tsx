@@ -7,14 +7,14 @@ import Image from "next/image";
 //   Permission,
 //   Settlement,
 // } from "../Icons/Icons";
-// import { SidebarProps, SidebarItemProps } from "@/types/types";
-import Paystride from "@/public/globe.svg";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // import classNames from "classnames";
 import { ReactNode } from "react";
 import { SidebarItemProps, SidebarProps } from "@/types/types";
 import classNames from "classnames";
+import { ClipboardMinus, Grid2x2 } from "lucide-react";
 // import Settings from "../Settings/Settings";
 // import Notification from "../Notification/Notification";
 // import SignOut from "../SignOut/SignOut";
@@ -29,12 +29,12 @@ const Sidebar = ({ display, displaymd }: SidebarProps) => {
     {
       title: "Dashboard",
       href: "/dashboard",
-      //   icon: Dashboard,
+      icon: <Grid2x2 />,
     },
     {
       title: "Reports",
       href: "/reports",
-      //   icon: Reports,
+      icon: <ClipboardMinus />,
     },
     {
       title: "Cordinator",
@@ -65,16 +65,9 @@ const Sidebar = ({ display, displaymd }: SidebarProps) => {
 
   return (
     <div
-      className={` min-h-screen sticky bg-[#F8F9FA] ${display} md:${displaymd} `}
+      className={`sticky top-40 left-0 h-screen bg-white border border-b-gray-200 ${display} md:${displaymd} `}
     >
-      <div className="h-screen sticky top-0 left-0 w-52 sm:w-64 px-4">
-        <div className="flex pl-12 h-[4.5rem] items-center  bg-[#F8F9FA]">
-          <Image src={Paystride} alt="Paystride" className="h-[2.5rem]" />
-          <h1 className="ml-3 text-lg font-bold text-[#6A8F9F] flex items-center justify-center">
-            Paystride
-          </h1>
-        </div>
-        <hr className="bg-gradient-to-r from-[#e0e1e200] via-[#E0E1E2] to-[#e0e1e20d] w-full h-[1px] my-1 border-transparent" />
+      <div className="h-full w-52 sm:w-64 px-4">
         <div className="flex flex-col item-center justify-center overflow-hidden bg-[#F8F9FA]">
           <div className="flex flex-col mt-3">
             {sideBarItems.map((item, index) => {

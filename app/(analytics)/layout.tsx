@@ -14,10 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <section>
-      <main className="w-full flex">
-        <Sidebar display={"hidden"} displaymd={"flex"} />
-        <div className="flex flex-col flex-[7]">
-          <Navbar />
+      <main className="w-full">
+        <Navbar />
+        {/* <Sidebar display={"hidden"} displaymd={"flex"} /> */}
+        <div className="flex flex-7">
+          <Sidebar display={"hidden"} displaymd={"flex"} />
+          {/* <Navbar /> */}
           <div className=" w-full bg-[#FAFAFA] min-h-[88vh] p-5">
             {children}
           </div>
