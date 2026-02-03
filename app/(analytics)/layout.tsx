@@ -16,11 +16,9 @@ export default function RootLayout({
     <section>
       <main className="w-full">
         <Navbar />
-        {/* <Sidebar display={"hidden"} displaymd={"flex"} /> */}
         <div className="flex flex-7">
           <Sidebar display={"hidden"} displaymd={"flex"} />
-          {/* <Navbar /> */}
-          <div className=" w-full bg-[#FAFAFA] min-h-[88vh] p-5">
+          <div className=" w-full bg-primary-50 min-h-[calc(100vh-97px)] p-5">
             {children}
           </div>
         </div>

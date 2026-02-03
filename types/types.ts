@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { LucideIcon } from "lucide-react";
 
 export type SidebarProps = {
 	display?: string;
@@ -8,5 +8,10 @@ export type SidebarProps = {
   export type SidebarItemProps = {
 	title: string;
 	href: string;
-	// icon: (color: any) => JSX.Element;
+	icon: LucideIcon;
+  };
+
+  export type SideBottomItemProps = {
+	title: string;
+	icon: LucideIcon;
   };

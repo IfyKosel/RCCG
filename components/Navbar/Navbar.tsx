@@ -15,14 +15,14 @@ const Navbar = (props: Props) => {
   const pageName = pathName.replace("/", "");
 
   return (
-    <header className="w-full border border-b-gray-200 bg-primary-50 top-0 left-0 z-10 sticky">
+    <header className="w-full border-b border-gray-200 bg-white top-0 left-0 z-10 sticky">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4">
         <div className="flex items-center gap-3">
           <Image
-            src="/public/globe.svg" // put logo in /public
+            src="/assets/rccg_logo.svg"
             alt="RCCG Logo"
-            width={40}
-            height={40}
+            width={80}
+            height={80}
           />
           <div className="leading-tight">
             <p className="text-lg font-bold text-gray-800">
